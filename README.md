@@ -1,2 +1,2 @@
 # digital-portfolio
-for speech class
+website to showcase digital portfolio
