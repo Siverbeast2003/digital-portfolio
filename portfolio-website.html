@@ -165,7 +165,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: var(--dark-gray);
+            color: var(--bg-dark);
         }
 
         section {
@@ -346,7 +346,6 @@
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             margin-bottom: 30px;
-            border-left: 4px solid var(--primary-blue);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--primary-blue);
         }
@@ -402,20 +401,21 @@
         }
 
         .education-card p {
-            color: var(--light-gray);
+            color: var(--text-secondary);
         }
 
         .writing-sample {
-            background: white;
+            background: var(--card-dark);
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
             max-width: 900px;
             margin: 40px auto;
         }
 
         .writing-sample h3 {
-            color: var(--dark-gray);
+            color: var(--text-primary);
             font-size: 1.8em;
             margin-bottom: 20px;
         }
@@ -427,7 +427,7 @@
         }
 
         .writing-sample p {
-            color: var(--light-gray);
+            color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 15px;
         }
@@ -445,11 +445,19 @@
         }
 
         .contact-card {
-            background: white;
+            background: var(--card-dark);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+            border-color: var(--primary-blue);
         }
 
         .contact-icon {
@@ -459,13 +467,13 @@
         }
 
         .contact-card h3 {
-            color: var(--dark-gray);
+            color: var(--text-primary);
             margin-bottom: 10px;
             font-size: 1.2em;
         }
 
         .contact-card a {
-            color: var(--primary-blue);
+            color: var(--accent-blue);
             text-decoration: none;
             word-break: break-all;
         }
@@ -475,10 +483,11 @@
         }
 
         .contact-form {
-            background: white;
+            background: var(--card-dark);
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
         }
 
         .form-group {
@@ -488,7 +497,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--dark-gray);
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -496,11 +505,13 @@
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 2px solid #e5e7eb;
+            border: 2px solid var(--border-color);
             border-radius: 5px;
             font-size: 1em;
             font-family: inherit;
             transition: border-color 0.3s;
+            background: var(--bg-dark);
+            color: var(--text-primary);
         }
 
         .form-group input:focus,
@@ -515,10 +526,11 @@
         }
 
         footer {
-            background: var(--dark-gray);
+            background: var(--bg-darker);
             color: white;
             text-align: center;
             padding: 40px 0;
+            border-top: 1px solid var(--border-color);
         }
 
         footer p {
@@ -559,7 +571,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--dark-gray);
+                background: var(--bg-darker);
                 padding: 20px;
                 gap: 15px;
             }
@@ -651,7 +663,7 @@
         </div>
     </section>
 
-    <section id="skills" style="background: white;">
+    <section id="skills" style="background: var(--card-dark);">
         <div class="container">
             <h2>Skills & Expertise</h2>
             <div class="skills-grid">
@@ -750,7 +762,7 @@
         </div>
     </section>
 
-    <section id="experience" style="background: white;">
+    <section id="experience" style="background: var(--card-dark);">
         <div class="container">
             <h2>Work Experience</h2>
             <div class="experience-item">
@@ -782,7 +794,7 @@
         </div>
     </section>
 
-    <section id="writing" style="background: white;">
+    <section id="writing" style="background: var(--card-dark);">
         <div class="container">
             <h2>Writing Samples</h2>
             <div class="writing-sample">
@@ -836,12 +848,8 @@
                 </div>
 
                 <div class="contact-form">
-                    <h3 style="margin-bottom: 25px; color: var(--dark-gray);">Send Me a Message</h3>
+                    <h3 style="margin-bottom: 25px; color: var(--text-primary);">Send Me a Message</h3>
                     <form action="https://formspree.io/f/your-form-id" method="POST">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" name="name" required>
-                        </div>
                         <div class="form-group">
                             <label>Your Email</label>
                             <input type="email" name="email" required>
@@ -891,10 +899,10 @@
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
         }
-
-        // Profile image handling
-        // Replace the placeholder with your actual image
-        // document.getElementById('profileImg').src = 'path-to-your-image.jpg';
     </script>
 </body>
-</html>
+</html>group">
+                            <label>Your Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-
